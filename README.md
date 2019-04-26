@@ -28,7 +28,7 @@ Perhatian: Karakter ‘/’ adalah karakter ilegal dalam penamaan file atau fold
 ## NO2
 Semua file video yang tersimpan secara terpecah-pecah (splitted) harus secara otomatis tergabung (joined) dan diletakkan dalam folder “Videos"
 Urutan operasi dari kebutuhan ini adalah:<br />
-<li />a. Tepat saat sebelum file system di-mount
+a. Tepat saat sebelum file system di-mount
 
 - Secara otomatis folder “Videos” terbuat di root directory file system
 
@@ -42,7 +42,7 @@ Urutan operasi dari kebutuhan ini adalah:<br />
 
 - Jangan tampilkan file pecahan di direktori manapun
 
-<li />b. Tepat saat file system akan di-unmount
+b. Tepat saat file system akan di-unmount
 
 - Hapus semua file video yang berada di folder “Videos”, tapi jangan hapus file pecahan yang terdapat di root directory file system
 

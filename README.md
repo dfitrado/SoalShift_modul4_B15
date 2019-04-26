@@ -47,7 +47,6 @@ b. Tepat saat file system akan di-unmount
 
 - Hapus folder “Videos” 
 
-
 ### PENJELASAN:
 
 ## NO3

@@ -22,7 +22,6 @@ Misalkan ada file bernama “halo” di dalam folder “INI_FOLDER”, dan key y
 “INI_FOLDER/halo” saat belum di-mount maka akan bernama “n,nsbZ]wio/QBE#”, saat telah di-mount maka akan otomatis terdekripsi kembali menjadi “INI_FOLDER/halo” .
 Perhatian: Karakter ‘/’ adalah karakter ilegal dalam penamaan file atau folder dalam *NIX, maka dari itu dapat diabaikan
 
-
 ### PENJELASAN:
 
 ## NO2

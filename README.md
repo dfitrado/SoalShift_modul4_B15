@@ -22,7 +22,6 @@ Misalkan ada file bernama “halo” di dalam folder “INI_FOLDER”, dan key y
 “INI_FOLDER/halo” saat belum di-mount maka akan bernama “n,nsbZ]wio/QBE#”, saat telah di-mount maka akan otomatis terdekripsi kembali menjadi “INI_FOLDER/halo” .
 Perhatian: Karakter ‘/’ adalah karakter ilegal dalam penamaan file atau folder dalam *NIX, maka dari itu dapat diabaikan
 
-
 ### PENJELASAN:
 
 ## NO2
@@ -48,7 +47,6 @@ b. Tepat saat file system akan di-unmount
 
 - Hapus folder “Videos” 
 
-
 ### PENJELASAN:
 
 ## NO3
@@ -58,7 +56,6 @@ Sebelum diterapkannya file system ini, Atta pernah diserang oleh hacker LAPTOP_R
 - Tidak dapat dibaca 
 
 Jika ditemukan file dengan spesifikasi tersebut ketika membuka direktori, Atta akan menyimpan nama file, group ID, owner ID, dan waktu terakhir diakses dalam file “filemiris.txt” (format waktu bebas, namun harus memiliki jam menit detik dan tanggal) lalu menghapus “file bahaya” tersebut untuk mencegah serangan lanjutan dari LAPTOP_RUSAK.
-
 
 ### PENJELASAN:
 
@@ -71,3 +68,4 @@ Pada folder YOUTUBER, setiap membuat folder permission foldernya akan otomatis m
 Ketika mengedit suatu file dan melakukan save, maka akan terbuat folder baru bernama Backup kemudian hasil dari save tersebut akan disimpan pada backup dengan nama namafile_[timestamp].ekstensi. Dan ketika file asli dihapus, maka akan dibuat folder bernama RecycleBin, kemudian file yang dihapus beserta semua backup dari file yang dihapus tersebut (jika ada) di zip dengan nama namafile_deleted_[timestamp].zip dan ditaruh kedalam folder RecycleBin (file asli dan backup terhapus). Dengan format [timestamp] adalah yyyy-MM-dd_HH:mm:ss
 
 ### PENJELASAN:
+

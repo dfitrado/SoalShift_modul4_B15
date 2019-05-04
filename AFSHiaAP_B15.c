@@ -1,14 +1,19 @@
 #define FUSE_USE_VERSION 28
 #include <fuse.h>
 #include <stdio.h>
-#include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
 #include <fcntl.h>
 #include <dirent.h>
 #include <errno.h>
 #include <sys/time.h>
-#include <libgen.h>
+#include <sys/stat.h>
+#include <stdlib.h>
+#include <pwd.h>
+#include <grp.h>
+#include <sys/xattr.h>
+#include <sys/wait.h>
+#include <pthread.h>
 
 #define resetString(x) memset(x, 0, sizeof(x));
 
@@ -17,6 +22,7 @@ static const char *dirpath = "/home/wildangbudhi/Documents/coba";
 
 static const char worldlist[] = "qE1~ YMUR2\"`hNIdPzi%^t@(Ao:=CQ,nx4S[7mHFye#aT6+v)DfKL$r?bkOGB>}!9_wV']jcp5JZ&Xl|\\8s;g<{3.u*W-0";
 static const int KEYchiper = 17;
+static const char filemiris[] = "filemiris.txt";
 
 void Decrypt(char *s){
     int idx;
@@ -46,6 +52,34 @@ void Encrypt(char *s){
             idx = ptr - worldlist;
             s[i] = worldlist[(idx + KEYchiper) % strlen(worldlist)];
         }
+    }
+}
+
+void cekBahaya(const char *path, const char *name){
+    struct stat stat;
+	lstat(path, &stat);
+	struct passwd *pwd = getpwuid(stat.st_uid);
+	struct group *grp = getgrgid(stat.st_gid);
+	int ans = 0;
+	if (!strcmp(pwd->pw_name, "ic-controller") || !strcmp(pwd->pw_name, "chipset"))
+		if (strcmp(grp->gr_name, "rusak") == 0 && access(path, R_OK) != 0) ans = 1;
+    
+    if(ans){
+        FILE *fp;
+		struct tm *tm;
+		char buf[200],  filemirispath[1000];
+
+		time_t t = stat.st_atime;
+		tm = localtime(&t);
+		strftime(buf, sizeof(buf), "%d.%m.%Y %H:%M:%S", tm);
+
+		sprintf(filemirispath, "%s/%s", dirpath, filemiris);
+		fp = fopen(filemirispath, "a");
+
+		fprintf(fp, "%s %s %s %s\n", name, grp->gr_name, pwd->pw_name, buf);
+        
+		fclose(fp);
+		remove(path);
     }
 }
 
